@@ -1,0 +1,25 @@
+.form__item {
+  > :not([hidden]) {
+    & ~ :not([hidden]) {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.form__label {
+  color: var(--destructive);
+}
+
+.form__description {
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  color: var(--muted-foreground);
+}
+
+.form__message {
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.25rem /* 20px */;
+  font-weight: 500;
+  color: var(--destructive);
+}
