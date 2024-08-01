@@ -1,0 +1,82 @@
+.navbar {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+
+  .logoIcon {
+    margin-right: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 1rem;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.searchForm {
+  display: flex;
+  gap: 0.5rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.searchInput {
+  min-width: 200px;
+
+  @media (max-width: 768px) {
+    flex-grow: 1;
+  }
+}
+
+.searchButton,
+.loginButton,
+.logoutButton {
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.loginIcon,
+.logoutIcon {
+  margin-right: 0.5rem;
+}

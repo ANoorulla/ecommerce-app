@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useTransition } from "react";
+import { useState, useTransition, useEffect } from "react";
 import { Button } from "@/components/ui/button/button";
 import { ShoppingCart } from "lucide-react";
 import styles from "./add-to-cart-button.module.scss";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 interface AddToCartButtonProps {
   productId: string;
@@ -14,20 +16,28 @@ export default function AddToCartButton({
   productId,
   incrementProductQuantity,
 }: AddToCartButtonProps) {
+  const { data: session, status } = useSession();
+  const router = useRouter();
   const [isPending, startTransition] = useTransition();
   const [success, setSuccess] = useState(false);
+
+  const handleAddToCart = () => {
+    if (status === "authenticated") {
+      setSuccess(false);
+      startTransition(async () => {
+        await incrementProductQuantity(productId);
+        setSuccess(true);
+      });
+    } else {
+      router.push("/login");
+    }
+  };
 
   return (
     <div className={styles.container}>
       <Button
         className={styles.button}
-        onClick={() => {
-          setSuccess(false);
-          startTransition(async () => {
-            await incrementProductQuantity(productId);
-            setSuccess(true);
-          });
-        }}
+        onClick={handleAddToCart}
         disabled={isPending}
       >
         Add to Cart

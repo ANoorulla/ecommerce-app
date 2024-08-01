@@ -42,6 +42,7 @@
 
   @media (min-width: 640px) {
     flex-direction: row;
+    align-items: center;
     width: auto;
   }
 }
@@ -73,9 +74,49 @@
   gap: 0.5rem;
 }
 
+.loginButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoutButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .cartIcon {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.loginIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.logoutIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+@media (max-width: 639px) {
+  .actions {
+    align-items: stretch;
+  }
+
+  .username {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
 }
 
 // .cartCount {

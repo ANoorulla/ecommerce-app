@@ -1,37 +1,30 @@
 "use client";
 
-import Link from "next/link";
-import { Input } from "../ui/input/input";
-import { Button } from "../ui/button/button";
-import { ShoppingBag, ShoppingCart } from "lucide-react";
+import { Suspense, useEffect, useState } from "react";
+import NavbarContent from "./nav-bar-content";
+import { ShoppingCart } from "@/lib/db/cart";
+import { Session } from "next-auth";
+import { useSession } from "next-auth/react";
 import styles from "./nav-bar.module.scss";
-import { searchProducts } from "@/lib/utils/search-actions";
 
-export default function Navbar() {
+interface NavbarProps {
+  cart: ShoppingCart | null;
+  initialSession: Session | null;
+}
+
+export default function Navbar({ cart, initialSession }: NavbarProps) {
+  const { data: sessionData } = useSession();
+  const [session, setSession] = useState<Session | null>(initialSession);
+
+  useEffect(() => {
+    if (sessionData) {
+      setSession(sessionData);
+    }
+  }, [sessionData]);
+
   return (
-    <div className={styles.navbar}>
-      <div className={styles.container}>
-        <Link href="/" className={styles.logo}>
-          <ShoppingBag className={styles.logoIcon} />
-          <span>Noorulla</span>
-        </Link>
-        <div className={styles.actions}>
-          <form action={searchProducts} className={styles.searchForm}>
-            <Input
-              name="searchQuery"
-              placeholder="Search"
-              className={styles.searchInput}
-            />
-            <Button type="submit" className={styles.searchButton}>
-              Search
-            </Button>
-          </form>
-          <Button variant="outline" className={styles.cartButton}>
-            <ShoppingCart className={styles.cartIcon} />
-            <span className={styles.cartCount}>{}</span>
-          </Button>
-        </div>
-      </div>
-    </div>
+    <Suspense fallback={<div className={styles.loading}>Loading...</div>}>
+      <NavbarContent cart={cart} session={session} />
+    </Suspense>
   );
 }

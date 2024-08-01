@@ -1,0 +1,16 @@
+// @import '@/styles/variables';
+
+.base {
+  flex-shrink: 0;
+  background-color: var(--border);
+}
+
+.horizontal {
+  height: 1px;
+  width: 100%;
+}
+
+.vertical {
+  width: 1px;
+  height: 100%;
+}

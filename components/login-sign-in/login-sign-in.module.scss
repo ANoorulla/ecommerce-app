@@ -1,0 +1,106 @@
+.loginsignup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+
+  &_container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 425px;
+  }
+
+  .user_icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .dialog_title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form {
+    &_footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+  }
+
+  .login_btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .loginsignup_login {
+    font-size: 14px;
+    color: #666;
+
+    span {
+      color: #2c4152;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  .loginsignup_fields {
+    margin-bottom: 20px;
+  }
+
+  .label_name {
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 5px;
+  }
+
+  .input_field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  .password_field {
+    position: relative;
+
+    .eye_icon {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &_container {
+      padding: 40px;
+    }
+
+    .dialog_title {
+      font-size: 28px;
+    }
+
+    .login_btn {
+      width: auto;
+      padding: 10px 20px;
+    }
+
+    .loginsignup_login {
+      font-size: 16px;
+    }
+  }
+}

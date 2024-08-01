@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #fde1ff 0%, #e1ffea22 60%);
+}
+.form_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+}
+
+.user_icon {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.form {
+  width: 100%;
+}
+
+.label_name {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.input_field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.password_field {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.eye_icon {
+  position: absolute;
+  bottom: 12px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.note_text {
+  margin-top: 20px;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+
+.note_text span {
+  color: #2c4152;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.register_btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.error_message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.form_footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form_title {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+.signup_fields {
+  margin-bottom: 20px;
+}
